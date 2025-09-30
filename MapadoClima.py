@@ -3,7 +3,15 @@ import folium
 from streamlit_folium import st_folium
 import requests
 import os
-
+# Título bonito
+st.markdown(
+    """
+    <h1 style='font-family: "Brush Script MT", cursive; color: #4B0082; text-align: center;'>
+        Juana Prognostica
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 # Configuração inicial
 st.set_page_config(page_title="Mapa do Clima", layout="wide")
 st.title("🌍 Mapa do Clima - Juana pronostica!")
@@ -52,4 +60,5 @@ if map_data and map_data["last_clicked"]:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
