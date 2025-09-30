@@ -87,7 +87,6 @@ if map_data and map_data["last_clicked"]:
         f"lat={lat}&lon={lon}&appid={API_KEY}&units=metric&lang=pt_br"
     )
     response = requests.get(url)
-whit col2:
     if response.status_code == 200:
         data = response.json()
         cidade = data.get("name", "Desconhecida")
@@ -104,6 +103,7 @@ whit col2:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
 
 
