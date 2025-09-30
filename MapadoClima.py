@@ -3,18 +3,18 @@ import folium
 from streamlit_folium import st_folium
 import requests
 import os
-# Título bonito
 st.markdown(
     """
-    <h1 style='font-family: "Brush Script MT", cursive; color: #4B0082; text-align: center;'>
+    <h1 style='font-family: "Brush Script MT", cursive; color: #4B0082; text-align: center; font-size:120px;'>
         Juana Prognostica
     </h1>
     """,
     unsafe_allow_html=True
 )
+
 # Configuração inicial
 st.set_page_config(page_title="Mapa do Clima", layout="wide")
-st.title("🌍 Mapa do Clima - Juana pronostica!")
+st.title("🌍 Mapa do Clima!")
 
 # API Key do OpenWeather (adicione nos secrets do Streamlit ou como variável de ambiente)
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
@@ -60,5 +60,6 @@ if map_data and map_data["last_clicked"]:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
 
