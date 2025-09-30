@@ -40,6 +40,38 @@ m = folium.Map(location=[-14.2350, -51.9253], zoom_start=4)
 
 # Instruções
 st.markdown("👉 Clique em qualquer cidade no mapa para ver a previsão do tempo")
+col1, col2 = st.columns([2, 1])
+
+with col1:
+    st.markdown("👉 Clique em qualquer cidade no mapa para ver a previsão do tempo")
+    m = folium.Map(location=[-14.2350, -51.9253], zoom_start=4)
+    map_data = st_folium(m, width=700, height=500)
+
+    st.subheader("📊 Resultado da pesquisa")
+
+    if map_data and map_data["last_clicked"]:
+        lat = map_data["last_clicked"]["lat"]
+        lon = map_data["last_clicked"]["lng"]
+
+        url = (
+            f"https://api.openweathermap.org/data/2.5/weather?"
+            f"lat={lat}&lon={lon}&appid={API_KEY}&units=metric&lang=pt_br"
+        )
+        response = requests.get(url)
+whith col2: 
+        if response.status_code == 200:
+            data = response.json()
+            cidade = data.get("name", "Desconhecida")
+            temp = data["main"]["temp"]
+            sensacao = data["main"]["feels_like"]
+            clima = data["weather"][0]["description"].capitalize()
+
+            st.subheader(f"📍 {cidade} ({lat:.2f}, {lon:.2f})")
+            st.metric("🌡️ Temperatura", f"{temp:.1f} °C")
+            st.metric("🥵 Sensação térmica", f"{sensacao:.1f} °C")
+            st.write(f"☁️ Condição: {clima}")
+        else:
+            st.error("Erro ao buscar dados da previsão. Verifique sua chave da API.")
 
 # Exibir mapa
 map_data = st_folium(m, width=700, height=700)
@@ -55,7 +87,7 @@ if map_data and map_data["last_clicked"]:
         f"lat={lat}&lon={lon}&appid={API_KEY}&units=metric&lang=pt_br"
     )
     response = requests.get(url)
-
+whit col2:
     if response.status_code == 200:
         data = response.json()
         cidade = data.get("name", "Desconhecida")
@@ -72,6 +104,7 @@ if map_data and map_data["last_clicked"]:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
 
 
