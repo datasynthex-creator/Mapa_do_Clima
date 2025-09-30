@@ -39,7 +39,7 @@ if not API_KEY:
 m = folium.Map(location=[-14.2350, -51.9253], zoom_start=4)
 
 # Instruções
-st.markdown("👉 Clique em qualquer cidade no mapa para ver a previsão do tempo")
+st.markdown("Você esta pronto?")
 col1, col2 = st.columns([2, 1])
 
 with col1:
@@ -103,6 +103,7 @@ if map_data and map_data["last_clicked"]:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
 
 
