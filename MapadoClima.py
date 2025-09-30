@@ -6,7 +6,7 @@ import os
 
 # Configuração inicial
 st.set_page_config(page_title="Mapa do Clima", layout="wide")
-st.title("🌍 Mapa do Clima - Previsão do Tempo")
+st.title("🌍 Mapa do Clima - Juana pronostica!")
 
 # API Key do OpenWeather (adicione nos secrets do Streamlit ou como variável de ambiente)
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
@@ -52,3 +52,4 @@ if map_data and map_data["last_clicked"]:
 
 # Rodar localmente:
 # streamlit run app.py
+
