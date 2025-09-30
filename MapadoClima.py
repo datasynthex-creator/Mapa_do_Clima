@@ -74,7 +74,7 @@ with col2:
             st.error("Erro ao buscar dados da previsão. Verifique sua chave da API.")
 
 # Exibir mapa
-map_data = st_folium(m, width=700, height=700)
+# map_data = st_folium(m, width=700, height=700)
 
 # Se o usuário clicar no mapa
 if map_data and map_data["last_clicked"]:
@@ -90,6 +90,7 @@ if map_data and map_data["last_clicked"]:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
 
 
