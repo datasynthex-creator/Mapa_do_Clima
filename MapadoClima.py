@@ -42,7 +42,7 @@ m = folium.Map(location=[-14.2350, -51.9253], zoom_start=4)
 st.markdown("👉 Clique em qualquer cidade no mapa para ver a previsão do tempo")
 
 # Exibir mapa
-map_data = st_folium(m, width=700, height=500)
+map_data = st_folium(m, width=700, height=700)
 
 # Se o usuário clicar no mapa
 if map_data and map_data["last_clicked"]:
@@ -72,6 +72,7 @@ if map_data and map_data["last_clicked"]:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
 
 
