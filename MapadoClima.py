@@ -46,7 +46,7 @@ with col1:
     st.markdown("👉 Clique em qualquer cidade no mapa para ver a previsão do tempo")
     m = folium.Map(location=[-14.2350, -51.9253], zoom_start=4)
     map_data = st_folium(m, width=700, height=500)
-
+with col2:
     st.subheader("📊 Resultado da pesquisa")
 
     if map_data and map_data["last_clicked"]:
@@ -104,6 +104,7 @@ whit col2:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
 
 
