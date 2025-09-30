@@ -3,6 +3,18 @@ import folium
 from streamlit_folium import st_folium
 import requests
 import os
+# 🔹 Fundo personalizado
+st.markdown(
+    """
+    <style>
+    body {
+        background: linear-gradient(135deg, #4B0082, #8A2BE2); /* Roxo → Violeta */
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown(
     """
     <h1 style='font-family: "Brush Script MT", cursive; color: #4B0082; text-align: center; font-size:120px;'>
@@ -60,6 +72,7 @@ if map_data and map_data["last_clicked"]:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
 
 
