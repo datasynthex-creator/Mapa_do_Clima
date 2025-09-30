@@ -8,7 +8,7 @@ st.markdown(
     """
     <style>
     body {
-        background: linear-gradient(135deg, #4B0082, #8A2BE2); /* Roxo → Violeta */
+        background: linear-gradient(136deg, #4B0082, #8A2BE2); /* Roxo → Violeta */
         color: white;
     }
     </style>
@@ -72,6 +72,7 @@ if map_data and map_data["last_clicked"]:
 
 # Rodar localmente:
 # streamlit run app.py
+
 
 
 
